@@ -1,5 +1,5 @@
 const express = require("express");
-const knex = require("../dbConfig/config");
+const knex = require("../db/knexConfig");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 
