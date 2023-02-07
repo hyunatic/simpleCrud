@@ -5,29 +5,16 @@ const router = express.Router();
 //Write your API codes over here
 router.get("/getUser", async (req, res) => {
   try {
-    const query = await knex("usertable");
+    const query = await knex("user");
     res.send(query);
   } catch (err) {
     res.send(err);
   }
 });
 
-router.get("/getUser1", (req, res) => {
-  knex("usertable")
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => res.send(err));
-});
-
-router.get("/updateUser", async (req, res) => {
+router.get("/login", async (req, res) => {
   try {
-    await knex("usertable")
-      .update({
-        email: "hy@gmail.com",
-      })
-      .where({ id: 1 });
-    let query = await knex("usertable").where({ id: 1 });
+    const query = await knex("user");
     res.send(query);
   } catch (err) {
     res.send(err);
