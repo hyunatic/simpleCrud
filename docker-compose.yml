@@ -25,6 +25,7 @@ services:
       - "db:/var/lib/mysql"
 
   phpmyadmin:
+    restart: unless-stopped
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
     links:
